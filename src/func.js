@@ -86,7 +86,7 @@ export const getNewAnswerCards = (deck, currentCard) => {
     fnException: card => {
       return !areCardsEqual(card, currentCard);
     },
-    numberOfItems: +process.env.REACT_APP_NUMBER_OF_ANSWERS || 8
+    numberOfItems: +import.meta?.env?.VITE_NUMBER_OF_ANSWERS || 8
   });
   return shuffle([...randomItems, currentCard]);
 };
@@ -100,7 +100,7 @@ export function shuffle(a) {
 }
 
 export function fetchDeck(level, group) {
-  return fetch(`${process.env.PUBLIC_URL}/decks/JLPT${level}-${group}.json`).then(data => data.json());
+  return fetch(`./public/decks/JLPT${level}-${group}.json`).then(data => data.json());
 }
 export function useSaveProgress(state) {
   useEffect(() => {

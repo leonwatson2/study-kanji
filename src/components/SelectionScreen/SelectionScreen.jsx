@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { decks } from '../../decks.json';
-import Level from './Level.js';
+import Level from './Level.jsx';
 import { gradeForGroup } from '../../func.js';
 
 function SelectionScreen(props) {
